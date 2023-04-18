@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta Product Name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+        <title>admin</title>
+    </head>
+    <style>
+
+        body {
+          background-color: #fbfbfb;
+        }
+        @media (min-width: 991.98px) {
+          main {
+            padding-left: 240px;
+          }
+        }
+        
+        /* Sidebar */
+        .sidebar {
+          position: fixed;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          padding: 58px 0 0; /* Height of navbar */
+          box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
+          width: 240px;
+          z-index: 600;
+        }
+        
+        @media (max-width: 991.98px) {
+          .sidebar {
+            width: 100%;
+          }
+        }
+        .sidebar .active {
+          border-radius: 5px;
+          box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+        }
+        
+        .sidebar-sticky {
+          position: relative;
+          top: 0;
+          height: calc(100vh - 48px);
+          padding-top: 0.5rem;
+          overflow-x: hidden;
+          overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+        }
+        /************************
+        Css orignal https://codepen.io/jlalovi/details/bIyAr
+        ************************/
+        @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,700);
+        * {
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;  
+        }
+        
+        
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding-left: 0;
+        }
+        
+        h1 {
+            font-size: 23px;
+        }
+        
+        h2 {
+            font-size: 17px;
+        }
+        
+        p {
+            font-size: 15px;
+        }
+        
+        a {
+            text-decoration: none;
+            font-size: 15px;
+        }
+            a:hover {
+                text-decoration: underline;
+            }
+        
+        
+            .scnd-font-color {
+                color: #9099b7;
+            }
+        .titular {
+        display: block;
+        line-height: 60px;
+        margin: 0;
+        text-align: center;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        }
+        .horizontal-list {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+            .horizontal-list li {
+                float: left;
+            }
+                .block {
+                    margin: 25px 25px 0 0;
+                    background: #394264;
+                    border-radius: 5px;
+              float: left;
+              width: 300px;
+              overflow: hidden;
+                }
+                
+        </style>
+<body>
+    <header>
+        <!-- Sidebar -->
+        <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+          <div class="position-sticky">
+            <div class="list-group list-group-flush mx-3 mt-4">
+              <a
+                href="admin.html"
+                class="list-group-item list-group-item-action py-2 ripple"
+                aria-current="true"
+              >
+                <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Main dashboard</span>
+              </a>
+              <a href="Sales.html" class="list-group-item list-group-item-action py-2 ripple mt-1"
+              ><i class="fas fa-money-bill fa-fw me-3"></i><span>Sales</span></a
+            >
+              <a href="Products.html" class="list-group-item list-group-item-action py-2 ripple mt-1">
+                <i class="fas fa-chart-area fa-fw me-3"></i><span>Products</span>
+              </a>
+              <a href="Orders.html" class="list-group-item list-group-item-action py-2 ripple mt-1"
+                ><i class="fas fa-lock fa-fw me-3"></i><span>Orders</span></a
+              >
+              <a href="Users.html" class="list-group-item list-group-item-action py-2 ripple mt-1"
+                ><i class="fas fa-chart-line fa-fw me-3"></i><span>Users</span></a
+              >
+              <a href="Form.html" class="list-group-item list-group-item-action py-2 ripple mt-1">
+                <i class="fas fa-chart-pie fa-fw me-3"></i><span>Form</span>
+              </a>
+
+
+
+            </div>
+          </div>
+        </nav>
+        <!-- Sidebar -->
+      
+        <!-- Navbar -->
+        <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: rgb(126, 124, 124)">
+          <!-- Container wrapper -->
+          <div class="container-fluid">
+            <!-- Toggle button -->
+
+      
+            <!-- Brand -->
+            <a class="navbar-brand text-white" href="#">
+                <h3>HOMESCRAPE</h3>
+            </a>
+            <!-- Search form -->
+            <form class="d-none d-md-flex input-group w-auto my-auto">
+              <input
+                autocomplete="off"
+                type="search"
+                class="form-control"
+                placeholder='Search...'
+                style="min-width: 225px;"
+              />
+              <span class="input-group-text border-0">Search<i class="fas fa-search"></i></span>
+            </form>
+      
+            <!-- Right links -->
+            <ul class="navbar-nav ms-auto d-flex flex-row">
+              <!-- Notification dropdown -->
+              <li class="nav-item dropdown">
+
+
+                </a>
+                <ul
+                  class="dropdown-menu dropdown-menu-end"
+                  aria-labelledby="navbarDropdownMenuLink"
+                >
+                  <li>
+                    <a class="dropdown-item" href="#">Some news</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Another news</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </li>
+                </ul>
+              </li>
+      
+              <!-- Icon -->
+              <li class="nav-item">
+                <a class="nav-link me-3 me-lg-0" href="#">
+                  <i class="fas fa-fill-drip"></i>
+                </a>
+              </li>
+              <!-- Icon -->
+              <li class="nav-item me-3 me-lg-0">
+                <a class="nav-link" href="#">
+                  <i class="fab fa-github"></i>
+                </a>
+              </li>
+      
+              <!-- Icon dropdown -->
+              <li class="nav-item dropdown">
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                  <li>
+                    <a class="dropdown-item" href="#"
+                      ><i class="flag-united-kingdom flag"></i>English
+                      <i class="fa fa-check text-success ms-2"></i
+                    ></a>
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="#"><i class="flag-poland flag"></i>Polski</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#"><i class="flag-china flag"></i>中文</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#"><i class="flag-japan flag"></i>日本語</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#"><i class="flag-germany flag"></i>Deutsch</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#"><i class="flag-france flag"></i>Français</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#"><i class="flag-spain flag"></i>Español</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#"><i class="flag-russia flag"></i>Русский</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#"><i class="flag-portugal flag"></i>Português</a>
+                  </li>
+                </ul>
+              </li>
+      
+              <!-- Avatar -->
+              <li class="nav-item dropdown d-flex">
+                <div class="dropdown">
+                    <button class="dropdown-toggle me-3 border-0 bg-transparent" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Profile</a></li>
+                      <li><a class="dropdown-item" href="#">Settings</a></li>
+                      <li><a class="dropdown-item" href="#">Log out</a></li>
+                    </ul>
+                  </div>
+                <a>
+                 <span style="color: white;">Muhammad Alfreijat&emsp;</span> 
+                  <img
+                    src="imgs/blank-profile-picture-973460_640.webp"
+                    class="rounded-circle"
+                    height="22"
+                    alt="Avatar"
+                    loading="lazy"
+                  />
+                </a>
+
+              </li>
+            </ul>
+          </div>
+          <!-- Container wrapper -->
+        </nav>
+        <!-- Navbar -->
+      </header>
+      <main style="margin-top: 78px;">
+
+        <div class="container">
+            <div class="table-wrapper ">
+                <div class="table-title">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h2>Manage <b>Products</b></h2>
+                        </div>
+                        <div class="col-sm-6">
+                            <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add  Products</span></a>
+                            <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>
+                                <span class="custom-checkbox">
+                                    <input type="checkbox" id="selectAll">
+                                    <label for="selectAll"></label>
+                                </span>
+                            </th>
+                            <th>Product Name</th>
+                            <th>Quantity</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <span class="custom-checkbox">
+                                    <input type="checkbox" id="checkbox1" Product Name="options[]" value="1">
+                                    <label for="checkbox1"></label>
+                                </span>
+                            </td>
+                            <td>Black Sofa</td>
+                            <td>200</td>
+                            <td>Sofas</td>
+                            <td>$499</td>
+                            <td>
+                                <a href="#">Edit</a>
+                                <a href="#">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="custom-checkbox">
+                                    <input type="checkbox" id="checkbox2" Product Name="options[]" value="1">
+                                    <label for="checkbox2"></label>
+                                </span>
+                            </td>
+                            <td>White Sofa</td>
+                            <td>250</td>
+                            <td>Sofas</td>
+                            <td>$599</td>
+                            <td>
+                                <a href="#">Edit</a>
+                                <a href="#">Delete</a>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="custom-checkbox">
+                                    <input type="checkbox" id="checkbox3" Product Name="options[]" value="1">
+                                    <label for="checkbox3"></label>
+                                </span>
+                            </td>
+                            <td>Brown Bed</td>
+                            <td>200</td>
+                            <td>Beds</td>
+                            <td>$359</td>
+                            <td>
+                                <a href="#">Edit</a>
+                                <a href="#">Delete</a>
+                        <tr>
+                            <td>
+                                <span class="custom-checkbox">
+                                    <input type="checkbox" id="checkbox4" Product Name="options[]" value="1">
+                                    <label for="checkbox4"></label>
+                                </span>
+                            </td>
+                            <td>White Bed</td>
+                            <td>200</td>
+                            <td>Beds</td>
+                            <td>$459</td>
+                            <td>
+                                <a href="#">Edit</a>
+                                <a href="#">Delete</a>
+                            </td>
+                        </tr>					
+                        <tr>
+                            <td>
+                                <span class="custom-checkbox">
+                                    <input type="checkbox" id="checkbox5" Product Name="options[]" value="1">
+                                    <label for="checkbox5"></label>
+                                </span>
+                            </td>
+                            <td>Lamps</td>
+                            <td>200</td>
+                            <td>Others</td>
+                            <td>$59</td>
+                            <td>
+                                <a href="#">Edit</a>
+                                <a href="#">Delete</a>
+                                
+                            </td>
+                        </tr> 
+                    </tbody>
+                </table>
+                <div class="clearfix">
+                    <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
+                    <ul class="pagination">
+                        <li class="page-item disabled"><a href="#">Previous</a></li>
+                        <li class="page-item"><a href="#" class="page-link">1</a></li>
+                        <li class="page-item"><a href="#" class="page-link">2</a></li>
+                        <li class="page-item active"><a href="#" class="page-link">3</a></li>
+                        <li class="page-item"><a href="#" class="page-link">4</a></li>
+                        <li class="page-item"><a href="#" class="page-link">5</a></li>
+                        <li class="page-item"><a href="#" class="page-link">Next</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Edit Modal HTML -->
+        <div id="addEmployeeModal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form>
+                        <div class="modal-header">						
+                            <h4 class="modal-title">Add Employee</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">					
+                            <div class="form-group">
+                                <label>Product Name</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Quantity</label>
+                                <input type="Quantity" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Category</label>
+                                <textarea class="form-control" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Price</label>
+                                <input type="text" class="form-control" required>
+                            </div>					
+                        </div>
+                        <div class="modal-footer">
+                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                            <input type="submit" class="btn btn-success" value="Add">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Edit Modal HTML -->
+        <div id="editEmployeeModal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form>
+                        <div class="modal-header">						
+                            <h4 class="modal-title">Edit Employee</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">					
+                            <div class="form-group">
+                                <label>Product Name</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Quantity</label>
+                                <input type="Quantity" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Category</label>
+                                <textarea class="form-control" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Price</label>
+                                <input type="text" class="form-control" required>
+                            </div>					
+                        </div>
+                        <div class="modal-footer">
+                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                            <input type="submit" class="btn btn-info" value="Save">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Delete Modal HTML -->
+        <div id="deleteEmployeeModal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form>
+                        <div class="modal-header">						
+                            <h4 class="modal-title">Delete Employee</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">					
+                            <p>Are you sure you want to delete these Records?</p>
+                            <p class="text-warning"><small>This action cannot be undone.</small></p>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                            <input type="submit" class="btn btn-danger" value="Delete">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
